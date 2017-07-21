@@ -1,5 +1,14 @@
 'use strict';
 
 function collectSameElements(collectionA, objectB) {
-  return '实现练习要求，并改写该行代码。';
+  var result = [];
+  collectionA.filter((a) => {
+    if (exist(a.key, objectB.value)) result.push(a.key);
+  })
+  return result;
 }
+
+var exist = (a, collection) => {
+  if (collection.indexOf(a) !== -1) return true;
+  return false
+};
